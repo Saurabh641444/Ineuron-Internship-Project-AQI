@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+		<title>result</title>
+		<style>
+		body{
+			margin: 0;
+			padding: 0;}
+
+		.con{
+			background:url('https://cdn.pixabay.com/photo/2017/08/03/09/20/pollution-2575166_960_720.jpg');
+			background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+		}
+
+		.results{
+			
+			font-size: 50px;
+			color: black;
+			font-family: 'Amaranth';
+
+		}
+		
+
+
+
+
+	</style>
+	</head>
+
+    <body>
+
+
+		<div class="con" >
+
+			<div class="results">
+
+				{% if prediction >=0 and prediction  <=55  %}
+					<h2 prediction  : <span> The Estimated AQI is <b>Good</b> </span></h2>
+
+					
+				{% elif prediction >= 56 and prediction <= 100 %}
+					<h2 prediction  : <span> The Estimated AQI is <b> Satisfactory </b> </span></h2>
+
+				{% elif prediction >= 101 and prediction <= 200 %}
+					<h2 prediction  : <span> The Estimated AQI is <b> Moderate </b> </span></h2>
+
+				{% elif prediction >= 201 and prediction <= 300 %}
+					<h2 prediction  : <span> The Estimated AQI is <b> Poor </b> </span></h2>
+
+				{% else %}
+					<h2 prediction  : <span> The Estimated AQI is <b> Severe </b> </span></h2>
+
+				{% endif %}
+
+			</div>
+
+	
+
+	
+
+		
+
+	</body>
+</html>
